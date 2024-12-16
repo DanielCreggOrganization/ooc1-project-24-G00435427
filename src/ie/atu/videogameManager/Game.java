@@ -158,4 +158,18 @@ class GameCollection extends GameManager {
             System.out.println("---------------------------");
         }
     }
+
+    public void displayGamesByGenre(String genre) {
+        boolean found = false;
+        for (Game game : games) {
+            if (game.getGenre().equalsIgnoreCase(genre)) {
+                game.displayDetails();
+                System.out.println("---------------------------");
+                found = true;
+            }
+        }
+        if (!found) {
+            System.out.println("No games found in the genre: " + genre);
+        }
+    }
 }

@@ -20,7 +20,8 @@ class Menu {
             System.out.println("(2) Delete game");
             System.out.println("(3) Show total number of games");
             System.out.println("(4) List all games");
-            System.out.println("(5) Quit");
+            System.out.println("(5) Search games by genre");
+            System.out.println("(6) Quit");
             System.out.print("Enter your selection: ");
 
             int userSelection = userInput.nextInt();
@@ -39,6 +40,9 @@ class Menu {
                     gameCollection.displayAllGames();
                     break;
                 case 5:
+                    searchGamesByGenreMenu();
+                    break;
+                case 6:
                     System.out.println("Video game database closing - goodbye");
                     userInput.close();
                     return;
@@ -70,6 +74,12 @@ class Menu {
         System.out.print("Enter Game ID to delete: ");
         int gameId = userInput.nextInt();
         gameCollection.deleteGame(gameId);
+    }
+
+    private void searchGamesByGenreMenu() {
+        System.out.print("Enter Genre to search: ");
+        String genre = userInput.next();
+        gameCollection.displayGamesByGenre(genre);
     }
 }
 
