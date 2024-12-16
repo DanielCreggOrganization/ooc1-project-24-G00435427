@@ -8,14 +8,16 @@ import java.util.Scanner;
 public class Game {
     // Instance Variables (Encapsulation)
     private int gameId; // Unique ID
+    private String name;
     private String genre;
     private float storageSizeGB;
     private int unitsSold;
     private boolean isMultiplayer;
 
     // Constructor
-    public Game(int gameId, String genre, float storageSizeGB, int unitsSold, boolean isMultiplayer) {
+    public Game(int gameId, String name, String genre, float storageSizeGB, int unitsSold, boolean isMultiplayer) {
         this.gameId = gameId;
+        this.name = name;
         this.genre = genre;
         this.storageSizeGB = storageSizeGB;
         this.unitsSold = unitsSold;
@@ -25,6 +27,10 @@ public class Game {
     // Getters and Setters
     public int getGameId() {
         return gameId;
+    }
+
+    public String getName() {
+        return name;
     }
 
     public String getGenre() {
@@ -43,6 +49,10 @@ public class Game {
         return isMultiplayer;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public void setGenre(String genre) {
         this.genre = genre;
     }
@@ -58,6 +68,7 @@ public class Game {
     // Method to display game details (Polymorphism)
     public void displayDetails() {
         System.out.println("Game ID: " + gameId);
+        System.out.println("Name: " + name);
         System.out.println("Genre: " + genre);
         System.out.println("Storage Size: " + storageSizeGB + " GB");
         System.out.println("Units Sold: " + unitsSold);
@@ -69,8 +80,8 @@ public class Game {
 class OnlineGame extends Game {
     private String serverRegion;
 
-    public OnlineGame(int gameId, String genre, float storageSizeGB, int unitsSold, boolean isMultiplayer, String serverRegion) {
-        super(gameId, genre, storageSizeGB, unitsSold, isMultiplayer);
+    public OnlineGame(int gameId, String name, String genre, float storageSizeGB, int unitsSold, boolean isMultiplayer, String serverRegion) {
+        super(gameId, name, genre, storageSizeGB, unitsSold, isMultiplayer);
         this.serverRegion = serverRegion;
     }
 
@@ -148,6 +159,3 @@ class GameCollection extends GameManager {
         }
     }
 }
-
-
-

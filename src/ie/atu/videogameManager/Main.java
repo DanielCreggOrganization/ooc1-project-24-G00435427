@@ -19,7 +19,8 @@ class Menu {
             System.out.println("(1) Add game");
             System.out.println("(2) Delete game");
             System.out.println("(3) Show total number of games");
-            System.out.println("(4) Quit");
+            System.out.println("(4) List all games");
+            System.out.println("(5) Quit");
             System.out.print("Enter your selection: ");
 
             int userSelection = userInput.nextInt();
@@ -35,6 +36,9 @@ class Menu {
                     System.out.println("Total games: " + gameCollection.countGames());
                     break;
                 case 4:
+                    gameCollection.displayAllGames();
+                    break;
+                case 5:
                     System.out.println("Video game database closing - goodbye");
                     userInput.close();
                     return;
@@ -47,6 +51,8 @@ class Menu {
     private void addGameMenu() {
         System.out.print("Enter Game ID: ");
         int gameId = userInput.nextInt();
+        System.out.print("Enter Name: ");
+        String name = userInput.next();
         System.out.print("Enter Genre: ");
         String genre = userInput.next();
         System.out.print("Enter Storage Size (GB): ");
@@ -56,7 +62,7 @@ class Menu {
         System.out.print("Is it Multiplayer? (true/false): ");
         boolean isMultiplayer = userInput.nextBoolean();
 
-        Game newGame = new Game(gameId, genre, storageSizeGB, unitsSold, isMultiplayer);
+        Game newGame = new Game(gameId, name, genre, storageSizeGB, unitsSold, isMultiplayer);
         gameCollection.addGame(newGame);
     }
 
