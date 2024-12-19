@@ -13,22 +13,22 @@ class Menu {
 
     public void displayMenu() {
         while (true) {
-            System.out.println("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-            System.out.println("Video Game Database");
-            System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-            System.out.println("(1) Add game");
-            System.out.println("(2) Delete game");
-            System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-            System.out.println("(3) Show total number of games");
-            System.out.println("(4) List all games");
-            System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-            System.out.println("(5) Search game by ID");
-            System.out.println("(6) Search games by genre");
-            System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-            System.out.println("(7) Compare game sales");
-            System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-            System.out.println("(8) Quit");
-            System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+            System.out.println("\n|~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|");
+            System.out.println("|Video Game Database             |");
+            System.out.println("|~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|");
+            System.out.println("|(1) Add game                    |");
+            System.out.println("|(2) Delete game                 |");
+            System.out.println("|~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|");
+            System.out.println("|(3) Show total number of games  |");
+            System.out.println("|(4) List all games              |");
+            System.out.println("|~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|");
+            System.out.println("|(5) Search game by ID           |");
+            System.out.println("|(6) Search games by genre       |");
+            System.out.println("|~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|");
+            System.out.println("|(7) Compare game sales          |");
+            System.out.println("|~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|");
+            System.out.println("|(8) Quit                        |");
+            System.out.println("|~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|");
             
             System.out.print("Enter your selection: ");
 
