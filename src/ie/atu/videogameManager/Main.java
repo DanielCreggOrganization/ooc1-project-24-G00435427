@@ -75,6 +75,9 @@ class Menu {
         }
     }
 
+
+    //Menu creation methods
+
     private void addGameMenu() {
         System.out.print("Enter Game ID: ");
         int gameId = userInput.nextInt();
