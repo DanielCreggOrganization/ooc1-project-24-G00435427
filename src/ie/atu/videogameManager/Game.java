@@ -2,11 +2,10 @@ package ie.atu.videogameManager;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
-// Base class for Game
+// Base class for Games
 public class Game {
-    // Instance Variables (Encapsulation)
+    // Variables (Encapsulation)
     private int gameId; // Unique ID
     private String name;
     private String genre;
@@ -65,7 +64,7 @@ public class Game {
         this.unitsSold = unitsSold;
     }
 
-    // Method to display game details (Polymorphism)
+    // Displays game details (Polymorphism)
     public void displayDetails() {
         System.out.println("Game ID: " + gameId);
         System.out.println("Name: " + name);
@@ -76,7 +75,12 @@ public class Game {
     }
 }
 
-// Subclass demonstrating Inheritance and Polymorphism
+/* Subclass  (Inheritance and Polymorphism)
+
+Leftover code
+Originally I wanted to include extended variables for if a game had multiplay to display available server regions but I ran out of time and didnt think it was worth implementing it
+
+
 class OnlineGame extends Game {
     private String serverRegion;
 
@@ -98,7 +102,7 @@ class OnlineGame extends Game {
         super.displayDetails();
         System.out.println("Server Region: " + serverRegion);
     }
-}
+}*/
 
 // Abstract class demonstrating Abstraction
 abstract class GameManager {
@@ -172,4 +176,26 @@ class GameCollection extends GameManager {
             System.out.println("No games found in the genre: " + genre);
         }
     }
+
+    public void compareGameSales(int gameId1, int gameId2) {
+        Game game1 = findGame(gameId1);
+        Game game2 = findGame(gameId2);
+
+        if (game1 != null && game2 != null) {
+            System.out.println("Comparison of sales:");
+            System.out.println(game1.getName() + " sold " + game1.getUnitsSold() + " units.");
+            System.out.println(game2.getName() + " sold " + game2.getUnitsSold() + " units.");
+
+            if (game1.getUnitsSold() > game2.getUnitsSold()) {
+                System.out.println(game1.getName() + " has higher sales.");
+            } else if (game1.getUnitsSold() < game2.getUnitsSold()) {
+                System.out.println(game2.getName() + " has higher sales.");
+            } else {
+                System.out.println("Both games have equal sales.");
+            }
+        }
+    }
 }
+
+
+

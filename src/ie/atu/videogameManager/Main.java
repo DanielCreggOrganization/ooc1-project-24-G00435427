@@ -18,10 +18,18 @@ class Menu {
             System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
             System.out.println("(1) Add game");
             System.out.println("(2) Delete game");
+            System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
             System.out.println("(3) Show total number of games");
             System.out.println("(4) List all games");
-            System.out.println("(5) Search games by genre");
-            System.out.println("(6) Quit");
+            System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+            System.out.println("(5) Search game by ID");
+            System.out.println("(6) Search games by genre");
+            System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+            System.out.println("(7) Compare game sales");
+            System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+            System.out.println("(8) Quit");
+            System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+            
             System.out.print("Enter your selection: ");
 
             int userSelection = userInput.nextInt();
@@ -30,19 +38,34 @@ class Menu {
                 case 1:
                     addGameMenu();
                     break;
+
                 case 2:
                     deleteGameMenu();
                     break;
+
                 case 3:
                     System.out.println("Total games: " + gameCollection.countGames());
                     break;
+
                 case 4:
                     gameCollection.displayAllGames();
                     break;
+
                 case 5:
+                searchGameByIdMenu();
+                break;
+
+                    case 6:
+                
                     searchGamesByGenreMenu();
                     break;
-                case 6:
+
+                case 7:
+                    compareGameSalesMenu();
+                    break;
+
+                case 8:
+                
                     System.out.println("Video game database closing - goodbye");
                     userInput.close();
                     return;
@@ -76,19 +99,39 @@ class Menu {
         gameCollection.deleteGame(gameId);
     }
 
+    private void searchGameByIdMenu() {
+        System.out.print("Enter Game ID to search: ");
+        int gameId = userInput.nextInt();
+        Game game = gameCollection.findGame(gameId);
+        if (game != null) {
+            game.displayDetails();
+        }
+    }
+
     private void searchGamesByGenreMenu() {
         System.out.print("Enter Genre to search: ");
         String genre = userInput.next();
         gameCollection.displayGamesByGenre(genre);
     }
+
+
+    private void compareGameSalesMenu() {
+        System.out.print("Enter the Game ID of the first game: ");
+        int gameId1 = userInput.nextInt();
+        System.out.print("Enter the Game ID of the second game: ");
+        int gameId2 = userInput.nextInt();
+
+    gameCollection.compareGameSales(gameId1, gameId2);
 }
 
-// Main class to demonstrate functionality
-public class Main {
+
+// Main class
+}public class Main {
     public static void main(String[] args) {
         Menu menu = new Menu();
-        menu.displayMenu();
+        menu.displayMenu();     // Launch the menu
     }
 }
+
 
 
