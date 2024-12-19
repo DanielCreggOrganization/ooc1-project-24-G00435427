@@ -5,7 +5,7 @@ import java.util.List;
 
 // Base class for Games
 public class Game {
-    // Variables (Encapsulation)
+    // Variables (Encapsulation, abstract)
     private int gameId; // Unique ID
     private String name;
     private String genre;
@@ -78,7 +78,7 @@ public class Game {
 /* Subclass  (Inheritance and Polymorphism)
 
 Leftover code
-Originally I wanted to include extended variables for if a game had multiplay to display available server regions but I ran out of time and didnt think it was worth implementing it
+Originally I wanted to include extended variables for if a game had multiplayer to display available server regions but I ran out of time and didnt think it was worth implementing it
 
 
 class OnlineGame extends Game {

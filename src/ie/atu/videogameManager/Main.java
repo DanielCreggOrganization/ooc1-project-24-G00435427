@@ -81,20 +81,30 @@ class Menu {
     private void addGameMenu() {
         System.out.print("Enter Game ID: ");
         int gameId = userInput.nextInt();
+        userInput.nextLine(); 
+    
         System.out.print("Enter Name: ");
-        String name = userInput.next();
+        String name = userInput.nextLine();
+    
         System.out.print("Enter Genre: ");
-        String genre = userInput.next();
+        String genre = userInput.nextLine();
+    
         System.out.print("Enter Storage Size (GB): ");
         float storageSizeGB = userInput.nextFloat();
+        userInput.nextLine(); 
+    
         System.out.print("Enter Units Sold: ");
         int unitsSold = userInput.nextInt();
+        userInput.nextLine();
+    
         System.out.print("Is it Multiplayer? (true/false): ");
         boolean isMultiplayer = userInput.nextBoolean();
-
+        userInput.nextLine();
+    
         Game newGame = new Game(gameId, name, genre, storageSizeGB, unitsSold, isMultiplayer);
         gameCollection.addGame(newGame);
     }
+    
 
     private void deleteGameMenu() {
         System.out.print("Enter Game ID to delete: ");
